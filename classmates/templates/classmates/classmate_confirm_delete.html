@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classmate Delete</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ECE3CE;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #739072; /* Green color for the submit button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #618264; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Classmate Delete</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
